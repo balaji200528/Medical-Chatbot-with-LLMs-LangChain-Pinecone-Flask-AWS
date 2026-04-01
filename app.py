@@ -46,9 +46,9 @@ prompt = ChatPromptTemplate.from_messages(
     ]
 )
 
+
 question_answer_chain = create_stuff_documents_chain(chatModel, prompt)
 rag_chain = create_retrieval_chain(retriever, question_answer_chain)
-
 
 
 @app.route("/")
@@ -70,3 +70,4 @@ def chat():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port= 8080, debug= True)
+
